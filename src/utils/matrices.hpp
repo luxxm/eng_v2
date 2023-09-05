@@ -1,12 +1,13 @@
 #pragma once
 
+#include <vector>
 #include "vectors.hpp"
 
 namespace matrices {
 	template <typename T>
 	class mat4 {
 	private:
-		vectors::vec4<T> matrix[4];
+		 std::vector<std::vector<T>>matrix[4];
 	public:
 		mat4() {};
 
@@ -43,7 +44,7 @@ namespace matrices {
 				this->matrix[i] = vec_arr[i];
 		}
 
-		vectors::vec4<T>& operator[](int n) {
+		std::vector<T>& operator[](int n) {
 			return matrix[n];
 		}
 
